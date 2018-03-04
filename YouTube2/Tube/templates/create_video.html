@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block tubee %}
+update page 
+{% endblock tubee %}
+{% block stuff %}
+{% load crispy_forms_tags %}
+
+<form action="{% url 'video_create' %}" method='POST' enctype ="multipart/form-data">
+	{{form|crispy}}
+	{% csrf_token %} 	
+	<input type="submit" value="create" class="btn btn-primary"/>
+</form>
+
+{% endblock stuff %}

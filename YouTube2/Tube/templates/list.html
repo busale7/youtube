@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block tubee %}
+list page 
+{% endblock tubee%}
+{% block stuff %}
+
+<div class="row">
+	<div class="container card text-center">
+		{% for videos in clips %} 
+		<div class="card text-center">
+		  <div class="card-header">
+		    <ul class="nav nav-tabs card-header-tabs">
+		      <li class="nav-item">
+		        <a class="nav-link active" href="#">Channel : {{videos.channel}}</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="{{videos.video_link}}">Video link </a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link disabled" href="#"></a>
+		      </li>
+		    </ul>
+		  </div>
+		  <div class="card-body">
+		    <h5 class="card-title"></h5>
+		    <p class="card-text">Video Description :{{videos.description}}</p>
+		    <a href="{% url 'vdetail' video_id=videos.id %}" class="btn btn-primary">Details</a>
+		    <a href="{% url 'vupdate' video_id=videos.id %}" class="btn btn-secondary"> update </a>
+		     <a href="{% url 'vdelete' video_id=videos.id %}" class="btn btn-secondary">Delete </a>
+		  </div>
+{% endfor %}
+{% endblock stuff %}
+		</div>
+	</div>
+	
+	
+</div>
+

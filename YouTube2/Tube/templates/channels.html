@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block tubee %}
+Channel list  
+{% endblock tubee%}
+{% block stuff %}
+	<div class="card text-center">
+		{% for items in channelss %}
+			<div class="card bg-light mb-3" style="max-width: 18rem;">
+			  <div class="card-header">Channel Title :{{items.name}}</div>
+			  <div class="card-body">
+			    <h5 class="card-title">Subscribers : {{items.number_subscribers}}</h5>
+			    <p class="card-text">Created by : {{items.creator}}</p>
+			        <a href="{% url 'detail' channel_id=items.id %}" class="btn btn-primary"> Details </a>
+			        <a href="{% url 'update' channel_id=items.id %}" class="btn btn-secondary"> update </a>
+			        <a href="{% url 'delete' channel_id=items.id %}" class="btn btn-secondary"> Delete </a>
+
+			  </div>
+			</div>
+		{% endfor %}
+	</div>
+
+
+{% endblock stuff %}

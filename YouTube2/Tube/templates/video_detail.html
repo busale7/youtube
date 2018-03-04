@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block tubee %}
+Video detail page 
+{% endblock tubee%}
+{% block stuff %}
+<div class="container">
+		
+		
+			<div class="card card text-center col-md-6" style="width: 18rem;">
+			  <div class="card-body">
+			    <h5 class="card-title"> Video Title : {{clips.name}}</h5>
+			    <p class="card-text"> Description : {{clips.description}}</p>
+			    <p class="card-text"> Channel : {{clips.channel}}</p>
+			    <a href="{{clips.video_link}}" class="btn btn-primary">Link </a>
+			    <a href="{% url 'list' %}" class="btn btn-secondary">Back </a>
+			    
+			  </div>
+			</div>
+		
+
+	
+</div>
+
+{% endblock stuff %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block tubee %}
+Channel detail page 
+{% endblock tubee%}
+{% block stuff %}
+<div class="card text-center">
+	<div class="card" style="width: 18rem;">
+	  <div class="card-body">
+
+	    <h5 class="card-title"> Video Title : {{channelss.name}}</h5>
+	    <p class="card-text"> created by : {{channelss.creator}}</p>
+	    <p class="card-text">Subscribers : {{channelss.number_subscribers}}</p>
+	    <a href="{% url 'channel_list' %}" class="btn btn-secondary">Back</a>
+	  </div>
+	</div>
+
+</div>
+
+
+
+{% endblock stuff %}
